@@ -31,9 +31,7 @@ class Status:
         headers = {"User_Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36","Cookie" : sid}
         #获取全局状态
         respons = requests.get(self.DomainUrl + self.StatusGlobal, headers = headers)
-        #取得xml解析成json格式
-        json = xmltodict.parse(respons.text)
-        print(json['status_global']['wan_input_bps'])
+        print(respons.text)
 
 
 if __name__ == '__main__':
